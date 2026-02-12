@@ -22,3 +22,7 @@ let button = document.querySelector("#cookie-btn");
 //      get the fortune string
 //      update the display
 
+button.addEventListener("click", function () {
+   let randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+   display.innerText = randomFortune;
+});

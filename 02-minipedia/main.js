@@ -10,10 +10,46 @@ let textFR = "La pomme est un fruit comestible produit par un pommier. Les pomme
 
 // 1. Select text elements
 
+let title = document.querySelector("#title");
+let subtitle = document.querySelector("#subtitle");
+let text = document.querySelector("#text");
+
+let contentWrapper = document.querySelector(".content-wrapper");
+let article = document.querySelector(".article");
+
 //2. Set initial content on load
+
+title.innerText = titleNL;
+subtitle.innerText = subtitleNL;
+text.innerText = textNL;
 
 //3. Select buttons
 
+let buttonNL = document.querySelector("#btn-nl");
+let buttonFR = document.querySelector("#btn-fr");
+
 //4. Add event listeners
 
+buttonFR.addEventListener('click', function () {
+   title.innerText = titleFR;
+   subtitle.innerText = subtitleFR;
+   text.innerText = textFR;
+   buttonFR.disabled = true;
+   buttonNL.disabled = false;
+})
+
+buttonNL.addEventListener('click', function () {
+   title.innerText = titleNL;
+   subtitle.innerText = subtitleNL;
+   text.innerText = textNL;
+   buttonNL.disabled = true;
+   buttonFR.disabled = false;
+})
+
 //5. Create, configure and append image
+
+let imgApple = document.createElement("img");
+imgApple.src = "appel.jpg";
+imgApple.alt = "apple";
+
+article.prepend(imgApple);
